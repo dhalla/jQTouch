@@ -6,5 +6,5 @@ extensions -> /projekte/libs/jQTouch/extensions/
 jqtouch -> /projekte/libs/jQTouch/jqtouch/
 themes -> /projekte/libs/jQTouch/themes/
 
-
+(git folgt keinen symlinks)
 
