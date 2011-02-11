@@ -16,7 +16,7 @@ $.jQTouch({
     icon: '/img/homescreen-icon-small.png',   
     statusBar: 'black',
     startupScreen: '/img/startupscreen-small.png',
-    slideSelector: '#jqt li a, .slide',
+    slideSelector: '#jqt li a, slideleftSelector',
     preloadImages: [
         '/img/10-medical.png',
         '/img/11-clock.png',
