@@ -28,33 +28,4 @@ $.jQTouch({
         '/img/startupscreen-small.png',
     ]
 }); 
-/*
 
-var jqt = {
-
-    addGlossToIcon:     true,
-    slideSelector:      '.slide', 
-    useFastTouch:       true,
-    icon:               '/img/homescreen-icon-small.png',   
-    statusBar:          'black',
-    startupScreen:      '/img/startupscreen-small.png',
-    preloadImages:      [
-        '/img/homescreen-icon-small.png',
-        '/img/startupscreen-small.png',
-        '/img/10-medical.png',
-        '/css/jqt-themes/apple/img/chevron.png',
-        '/css/jqt-themes/apple/img/loading.gif'
-    ],    
-    
-    init: function(e) {
-        
-    },
-    
-    test: function(e) {
-        alert("xxxx");
-    }
-    
-    
-
-}
-*/
