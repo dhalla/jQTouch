@@ -1,0 +1,47 @@
+.toolbar {
+    margin-top: 20px;
+}
+
+#slidedownmenu {
+	position:absolute;
+	width:100%;
+	height:65px;
+	top:-65px;
+	left:0;
+	z-index:999;
+	background: black url(/themes/jqt/img/toolbar.png) repeat-x;
+}
+
+#slidedownmenu .handle {
+	-webkit-user-select:none;
+	position:absolute;
+	bottom:-20px;
+	left:0;
+	width:100%;
+	height:20px;
+	border-top:1px solid #000;
+	border-bottom:1px solid #DDD;
+	background-color:#c3a57e;
+	background: black url(/img/89-dumbell.png) no-repeat 50% 50%;
+}
+
+#jqt #slidedownmenu ul {
+	text-align: center;
+	border: none;
+}
+
+#jqt #slidedownmenu ul li {
+	display: inline-block;
+    background: none;
+	border: none;
+	margin: 0;
+}
+
+#jqt #slidedownmenu ul li a {
+	display: block;
+	background-color: black;
+	height: 25px;
+	padding: 5px 20px;
+	border-radius: 3px;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(54,52,54)), color-stop(0.88, rgb(0,0,0)));
+}

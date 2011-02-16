@@ -11,12 +11,15 @@
     <!-- CSS -->
     <style type="text/css" media="screen">@import "/jqtouch/jqtouch.css";</style>
     <style type="text/css" media="screen">@import "/themes/jqt/theme.css";</style>
+    <style type="text/css" media="screen">@import "/extensions/add2home.css";</style>
     <style type="text/css" media="screen">@import "/css/main.css";</style>
     
     <!-- JS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
     <script src="/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
-    <script src="/js/main.js" type="application/x-javascript" charset="utf-8"></script> 
+    <script src="/extensions/add2home.js" type="application/x-javascript" charset="utf-8"></script>   
+    <script src="/extensions/slideinmenu.js" type="application/x-javascript" charset="utf-8"></script>   
+    <script src="/js/main.js" type="application/x-javascript" charset="utf-8"></script>     
     
 </head>
 
@@ -24,74 +27,96 @@
 
     <!-- ============================================== -->
     <!-- Home / Hauptmenu -->
-    <div id="home">
-        
+    <div id="home">       
+
+        <div id="slidedownmenu">
+        	<ul>
+                <li><a href="#erfassen" class="fade"><img src="/img/57-download.png" alt="" /></a></li>
+                <li><a href="#history" class="fade"><img src="/img/16-line-chart.png" alt="" /></a></li>
+                <li><a href="" class="fade"><img src="/img/60-signpost.png" alt="" /></a></li>
+                <li><a href="" class="fade"><img src="/img/96-book.png" alt="" /></a></li>
+        	</ul>
+            <div class="handle"></div>
+        </div> 
+
         <div class="toolbar">
             <h1>Trackr</h1>
-        </div>
+        </div>        
         
-        <div class="scroll">
-            <ul class="rounded">
-                <li class="arrow"><a href="#edge">Verbrauch erfassen</a></li>
-                <li class="arrow"><a href="" class="arrow">History ansehen</a></li>
-                <li class="arrow"><a href="">Einstellungen</a></li>
-                <li class="arrow"><a href="">Anleitung</a></li>
-            </ul>                              
-        </div>
-    
+        <ul class="rounded">
+            <li class="forward"><a href="#erfassen">Verbrauch erfassen</a></li>
+            <li class="arrow"><a href="#history">History ansehen</a></li>
+            <li class="arrow"><a href="">Einstellungen</a></li>
+            <li class="arrow"><a href="">Anleitung</a></li>
+        </ul>                              
+
+        <p>You can also <a href="#" onclick="menu.open();return false">Open</a>, <a href="#" onclick="menu.close();return false">Close</a> and <a href="#" onclick="menu.toggle();return false">Toggle</a> the menu programmatically.</p>
+
     </div>
-
-    <!-- ============================================== -->
-    <!-- Verbrauch erfassen -->
-    <div id="edge">
-                <div class="toolbar">
-                    <h1>Edge to Edge</h1>
-                    <a href="#" class="back">Back</a>
-                </div>
-
-                        <ul class="edgetoedge">
-                            <li class="sep">F</li>
-                            <li><a href="#">Flintstone, <em>Fred</em></a></li>
-                            <li><a href="#">Flintstone, <em>Pebble</em></a></li>
-                            <li><a href="#">Flintstone, <em>Wilma</em></a></li>
-                            <li class="sep">J</li>
-                            <li><a href="#">Jetson, <em>Elroy</em></a></li>
-                            <li><a href="#">Jetson, <em>George</em></a></li>
-                            <li><a href="#">Jetson, <em>Jane</em></a></li>
-                            <li><a href="#">Jetson, <em>Judy</em></a></li>
-                            <li class="sep">R</li>
-                            <li><a href="#">Rubble, <em>Bambam</em></a></li>
-                            <li><a href="#">Rubble, <em>Barney</em></a></li>
-                            <li><a href="#">Rubble, <em>Betty</em></a></li>
-                            <li class="sep">F</li>
-                            <li><a href="#">Flintstone, <em>Fred</em></a></li>
-                            <li><a href="#">Flintstone, <em>Pebble</em></a></li>
-                            <li><a href="#">Flintstone, <em>Wilma</em></a></li>
-                            <li class="sep">J</li>
-                            <li><a href="#">Jetson, <em>Elroy</em></a></li>
-                            <li><a href="#">Jetson, <em>George</em></a></li>
-                            <li><a href="#">Jetson, <em>Jane</em></a></li>
-                            <li><a href="#">Jetson, <em>Judy</em></a></li>
-                            <li class="sep">R</li>
-                            <li><a href="#">Rubble, <em>Bambam</em></a></li>
-                            <li><a href="#">Rubble, <em>Barney</em></a></li>
-                            <li><a href="#">Rubble, <em>Betty</em></a></li>
-                            <li class="sep">F</li>
-                            <li><a href="#">Flintstone, <em>Fred</em></a></li>
-                            <li><a href="#">Flintstone, <em>Pebble</em></a></li>
-                            <li><a href="#">Flintstone, <em>Wilma</em></a></li>
-                            <li class="sep">J</li>
-                            <li><a href="#">Jetson, <em>Elroy</em></a></li>
-                            <li><a href="#">Jetson, <em>George</em></a></li>
-                            <li><a href="#">Jetson, <em>Jane</em></a></li>
-                            <li><a href="#">Jetson, <em>Judy</em></a></li>
-                            <li class="sep">R</li>
-                            <li><a href="#">Rubble, <em>Bambam</em></a></li>
-                            <li><a href="#">Rubble, <em>Barney</em></a></li>
-                            <li><a href="#">Rubble, <em>Betty</em></a></li>
-                        </ul>
-      
-            </div>
     
+    
+    <!-- ============================================== -->
+    <!-- History -->
+    <div id="history">
+
+        <div id="slidedownmenu">
+        	<ul>
+                <li><a href="#erfassen" class="fade"><img src="/img/57-download.png" alt="" /></a></li>
+                <li><a href="#history" class="fade"><img src="/img/16-line-chart.png" alt="" /></a></li>
+                <li><a href="" class="fade"><img src="/img/60-signpost.png" alt="" /></a></li>
+                <li><a href="" class="fade"><img src="/img/96-book.png" alt="" /></a></li>
+        	</ul>
+            <div class="handle"></div>
+        </div> 
+
+        <div class="toolbar">
+            <h1>Trackr</h1>
+            <a href="#" class="back">Zurück</a>
+        </div>
+
+            <ul class="edgetoedge">
+                <li class="sep">F</li>
+                <li><a href="#">Flintstone, <em>Fred</em></a></li>
+                <li><a href="#">Flintstone, <em>Pebble</em></a></li>
+                <li><a href="#">Flintstone, <em>Wilma</em></a></li>
+                <li class="sep">J</li>
+                <li><a href="#">Jetson, <em>Elroy</em></a></li>
+                <li><a href="#">Jetson, <em>George</em></a></li>
+                <li><a href="#">Jetson, <em>Jane</em></a></li>
+                <li><a href="#">Jetson, <em>Judy</em></a></li>
+                <li class="sep">R</li>
+                <li><a href="#">Rubble, <em>Bambam</em></a></li>
+                <li><a href="#">Rubble, <em>Barney</em></a></li>
+                <li><a href="#">Rubble, <em>Betty</em></a></li>
+                <li class="sep">F</li>
+                <li><a href="#">Flintstone, <em>Fred</em></a></li>
+                <li><a href="#">Flintstone, <em>Pebble</em></a></li>
+                <li><a href="#">Flintstone, <em>Wilma</em></a></li>
+                <li class="sep">J</li>
+                <li><a href="#">Jetson, <em>Elroy</em></a></li>
+                <li><a href="#">Jetson, <em>George</em></a></li>
+                <li><a href="#">Jetson, <em>Jane</em></a></li>
+                <li><a href="#">Jetson, <em>Judy</em></a></li>
+                <li class="sep">R</li>
+                <li><a href="#">Rubble, <em>Bambam</em></a></li>
+                <li><a href="#">Rubble, <em>Barney</em></a></li>
+                <li><a href="#">Rubble, <em>Betty</em></a></li>
+                <li class="sep">F</li>
+                <li><a href="#">Flintstone, <em>Fred</em></a></li>
+                <li><a href="#">Flintstone, <em>Pebble</em></a></li>
+                <li><a href="#">Flintstone, <em>Wilma</em></a></li>
+                <li class="sep">J</li>
+                <li><a href="#">Jetson, <em>Elroy</em></a></li>
+                <li><a href="#">Jetson, <em>George</em></a></li>
+                <li><a href="#">Jetson, <em>Jane</em></a></li>
+                <li><a href="#">Jetson, <em>Judy</em></a></li>
+                <li class="sep">R</li>
+                <li><a href="#">Rubble, <em>Bambam</em></a></li>
+                <li><a href="#">Rubble, <em>Barney</em></a></li>
+                <li><a href="#">Rubble, <em>Betty</em></a></li>                            
+            </ul>
+      
+        </div>
+
 </body>
 </html>

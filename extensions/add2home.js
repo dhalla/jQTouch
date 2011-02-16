@@ -26,14 +26,14 @@ var nav = navigator,
 	expired = localStorage.getItem('_addToHome'),
 	theInterval, closeTimeout, el, i, l,
 	options = {
-		animationIn: 'drop',		// drop || bubble || fade
+		animationIn: 'bubble',		// drop || bubble || fade
 		animationOut: 'fade',		// drop || bubble || fade
-		startDelay: 2000,			// 2 seconds from page load before the balloon appears
-		lifespan: 20000,			// 20 seconds before it is automatically destroyed
+		startDelay: 1000,			// 2 seconds from page load before the balloon appears
+		lifespan: 10000,			// 20 seconds before it is automatically destroyed
 		bottomOffset: 14,			// Distance of the balloon from bottom
 		expire: 0,					// Minutes to wait before showing the popup again (0 = always displayed)
 		message: '',				// Customize your message or force a language ('' = automatic)
-		touchIcon: false,			// Display the touch icon
+		touchIcon: true,			// Display the touch icon
 		arrow: true,				// Display the balloon arrow
 		iterations:100				// Internal/debug use
 	},
@@ -121,7 +121,9 @@ function ready () {
 	div.className = (isIPad ? 'ipad' : 'iphone') + (touchIcon ? ' wide' : '');
 	div.innerHTML = touchIcon + options.message.replace('%device', platform).replace('%icon', OSVersion >= 4.2 ? '<span class="share"></span>' : '<span class="plus">+</span>') + (options.arrow ? '<span class="arrow"></span>' : '') + '<span class="close">×</span>';
 
-	document.body.appendChild(div);
+	//document.body.appendChild(div);
+	// Hack to make this in jQTouch work:
+	document.documentElement.appendChild(div);
 	el = div;
 
 	// Add the close action

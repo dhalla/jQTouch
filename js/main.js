@@ -1,12 +1,10 @@
-// Initialize Add2Home
-// @see http://cubiq.org/add-to-home-screen
-var addToHomeConfig = {
-	animationIn: 'bubble',
-	animationOut: 'drop',
-	lifespan:10000,
-	expire:2,
-	touchIcon:true,
-};
+// Menu
+var menu;
+function loaded() {
+	document.addEventListener('touchmove', function(e){ e.preventDefault(); e.stopPropagation(); });
+	menu = new slideInMenu('slidedownmenu', false);
+}
+
 
 // Initialize jQTouch
 // @see https://github.com/senchalabs/jQTouch/wiki/initoptions
@@ -30,3 +28,17 @@ $.jQTouch({
     ]
 }); 
 
+// jQuery
+$(document).ready(function() {
+    
+    loaded();
+
+
+})
+
+
+var trackr = {
+
+
+
+}
