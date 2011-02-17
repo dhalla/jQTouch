@@ -2,6 +2,10 @@
     margin-top: 20px;
 }
 
+p.footer {
+    text-align: center;
+}
+
 #slidedownmenu {
 	position:absolute;
 	width:100%;
@@ -45,3 +49,5 @@
 	border-radius: 3px;
 	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(54,52,54)), color-stop(0.88, rgb(0,0,0)));
 }
+
+
