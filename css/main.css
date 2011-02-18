@@ -2,6 +2,10 @@
     margin-top: 20px;
 }
 
+p {
+    margin: 0 2%;
+}
+
 p.footer {
     text-align: center;
 }

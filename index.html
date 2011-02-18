@@ -17,7 +17,7 @@
     <!-- JS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
     <script src="/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
-    <script src="/extensions/add2home.js" type="application/x-javascript" charset="utf-8"></script>   
+    <!-- <script src="/extensions/add2home.js" type="application/x-javascript" charset="utf-8"></script>  -->
     <script src="/extensions/slideinmenu.js" type="application/x-javascript" charset="utf-8"></script>   
     <script src="/js/main.js" type="application/x-javascript" charset="utf-8"></script>     
     
@@ -50,7 +50,7 @@
             <li class="arrow"><a href="#anleitung">Anleitung</a></li>
         </ul>                              
 
-        <ul class="edgetoedge">
+        <ul class="rounded">
             <li>
                 Zuletzt gespeicherter Zählerstand:<br />
                 Wasser:<br />
@@ -111,16 +111,51 @@
         </div> 
 
         <div class="toolbar">
-            <h1>Trackr</h1>
+            <h1>Einstellungen</h1>
             <a href="#" class="back">Zurück</a>
-            <a href="#home" class="button flip">Home</a>
+            <a href="#deletesettings" class="button slideup">Löschen</a>
         </div>
 
+        <form method="get" class="form" id="settings_form">
         <ul class="edgetoedge">
-            <li>Settings</li>                        
+            <li>Ihre Postleitzahl:</li>
+            <li><input type="number" name="zip" placeholder="PLZ" id="plz"></li>
+            <li>Produktsparten:</li>
+            <li><input type="checkbox" name="strom" value="strom" checked="checked" title="Strom"></li>                        
+            <li><input type="checkbox" name="gas" value="gas" checked="checked" title="Gas"></li>
+            <li><input type="checkbox" name="wasser" value="wasser" checked="checked" title="Wasser"></li>    
+            <a href="#" class="greenButton">Speichern</a>                                                 
         </ul>
+        </form>
+        <p class="footer">(Debug) <a href="#" onclick="menu.open();return false">Menu Open</a>, <a href="#" onclick="menu.close();return false">Menu Close</a>, <a href="#" onclick="menu.toggle();return false">Menu Toggle</a></p>
       
     </div>  
+    
+    <!-- ============================================== -->
+    <!-- Einstellungen löschen -->
+    <div id="deletesettings">
+
+        <div id="slidedownmenu">
+        	<ul>
+                <li><a href="#erfassen" class="fade"><img src="/img/57-download.png" alt="" /></a></li>
+                <li><a href="#history" class="fade"><img src="/img/16-line-chart.png" alt="" /></a></li>
+                <li><a href="#settings" class="fade"><img src="/img/60-signpost.png" alt="" /></a></li>
+                <li><a href="#anleitung" class="fade"><img src="/img/96-book.png" alt="" /></a></li>
+        	</ul>
+            <div class="handle"></div>
+        </div> 
+
+        <div class="toolbar">
+            <h1>Löschen</h1>
+            <a href="#" class="back">Zurück</a>
+        </div>
+
+        <form method="get" class="form" id="settings_form">
+        <a href="#" class="redButton">Einstellungen löschen</a>
+        </form>
+        <p class="footer">(Debug) <a href="#" onclick="menu.open();return false">Menu Open</a>, <a href="#" onclick="menu.close();return false">Menu Close</a>, <a href="#" onclick="menu.toggle();return false">Menu Toggle</a></p>
+        
+    </div>      
     
     <!-- ============================================== -->
     <!-- Verbrauch erfassen -->
@@ -152,10 +187,20 @@
     <!-- History -->
     <div id="history">
 
+        <div id="slidedownmenu">
+        	<ul>
+                <li><a href="#erfassen" class="fade"><img src="/img/57-download.png" alt="" /></a></li>
+                <li><a href="#history" class="fade"><img src="/img/16-line-chart.png" alt="" /></a></li>
+                <li><a href="#settings" class="fade"><img src="/img/60-signpost.png" alt="" /></a></li>
+                <li><a href="#anleitung" class="fade"><img src="/img/96-book.png" alt="" /></a></li>
+        	</ul>
+            <div class="handle"></div>
+        </div> 
+
         <div class="toolbar">
             <h1>Trackr</h1>
             <a href="#" class="back">Zurück</a>
-           
+            <a href="#home" class="button flip">Home</a>
         </div>
 
             <ul class="edgetoedge">
