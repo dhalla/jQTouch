@@ -38,6 +38,11 @@ $(document).ready(function() {
 
 var trackr = {
 
+    test: true,
+    test: function() {
+    
+    },
+
 
 
 }
