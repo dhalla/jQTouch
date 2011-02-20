@@ -1,11 +1,3 @@
-// Menu
-var menu;
-function loaded() {
-	//document.addEventListener('touchmove', function(e){ e.preventDefault(); e.stopPropagation(); });
-	menu = new slideInMenu('slidedownmenu', false);
-}
-
-
 // Initialize jQTouch
 // @see https://github.com/senchalabs/jQTouch/wiki/initoptions
 $.jQTouch({
@@ -31,7 +23,7 @@ $.jQTouch({
 // jQuery
 $(document).ready(function() {
     
-    loaded();
+
 
 })
 
@@ -41,7 +33,7 @@ var trackr = {
     test: true,
     test: function() {
     
-    },
+    }
 
 
 
