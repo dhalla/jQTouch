@@ -1,3 +1,10 @@
+// jQuery
+$(document).ready(function() {  
+
+    trackr.init();
+
+})
+
 // Initialize jQTouch
 // @see https://github.com/senchalabs/jQTouch/wiki/initoptions
 $.jQTouch({
@@ -20,21 +27,33 @@ $.jQTouch({
     ]
 }); 
 
-// jQuery
-$(document).ready(function() {
-    
-
-
-})
-
-
 var trackr = {
+    
+    init: function() {
 
-    test: true,
-    test: function() {
+        $('#settings_form .submit').click(function() {
+            trackr.saveSettings();
+        })
+    
+    },
+    
+    /**
+     * Save settings to local Storage
+     *
+     */
+    saveSettings: function(form) {
+    
+        // Save PLZ
+        localStorage.setItem('plz', $('#settings_form #plz').val());
+        
+        // Save Sparten
+        var sparten = [];
+        $('#settings_form input:checked').each(function(index) {
+            sparten[index] = ($(this).val());
+        });
+        localStorage.setItem('sparten',sparten);       
     
     }
-
 
 
 }
