@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 // Initialize jQTouch
 // @see https://github.com/senchalabs/jQTouch/wiki/initoptions
-$.jQTouch({
+var jqt = new $.jQTouch({
     addGlossToIcon: true,
     useFastTouch: true,
     icon: '/img/homescreen-icon-small.png',   
@@ -25,10 +25,11 @@ $.jQTouch({
         '/img/homescreen-icon-small.png',
         '/img/startupscreen-small.png',
     ]
-}); 
+});
+
 
 var trackr = {
-    
+ 
     init: function() {
 
         trackr.populateFormFields();
@@ -80,7 +81,9 @@ var trackr = {
         $('#settings_form input:checked').each(function(index) {
             sparten[index] = ($(this).val());
         });
-        localStorage.setItem('sparten',sparten);       
+        localStorage.setItem('sparten',sparten);  
+        
+        alert("Einstellungen gespeichert.");     
     
     },
     
@@ -96,19 +99,19 @@ var trackr = {
             localStorage.removeItem('plz');
             localStorage.removeItem('sparten');
             $('#settings_form input:checkbox').each(function() { $(this).attr('checked', false) });
+            $('#settings_form #plz').val('PLZ');
             console.log('PLZ/Sparten gelöscht');
             deleted = true;
         };
         if ($('#delete_settings input[name="messwerte"]').attr('checked')) {
             localStorage.removeItem('messwerte');
-            $('#settings_form #plz').val('PLZ');
             console.log('Messwerte gelöscht');            
             deleted = true;
         };
-
-        if (deleted) {
+        
+        if (deleted == true) {
             alert("Lokale Daten gelöscht.");
-            window.location.hash = '#settings';
+            jqt.goTo('#settings', 'slidedown');
         }
     
     }
