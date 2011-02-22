@@ -89,11 +89,12 @@
             <li>Ihre Postleitzahl:</li>
             <li><input type="number" name="plz" placeholder="PLZ" id="plz"></li>
             <li>Produktsparten:</li>
-            <li><input type="checkbox" name="strom" value="strom" checked="checked" title="Strom"></li>                        
-            <li><input type="checkbox" name="gas" value="gas" checked="checked" title="Gas"></li>
-            <li><input type="checkbox" name="wasser" value="wasser" checked="checked" title="Wasser"></li>    
-            <a href="#" class="greenButton submit">Speichern</a>                                                 
+            <li><input type="checkbox" name="strom" value="strom" title="Strom"></li>                        
+            <li><input type="checkbox" name="gas" value="gas" title="Gas"></li>
+            <li><input type="checkbox" name="wasser" value="wasser" title="Wasser"></li>    
+            <li><a href="#" class="greenButton submit">Speichern</a></li>
         </ul>
+
         </form>
       
     </div>  
@@ -107,8 +108,12 @@
             <a href="#" class="back">Zurück</a>
         </div>
 
-        <form method="get" class="form" id="settings_form">
-        <a href="#" class="redButton">Einstellungen löschen</a>
+        <form class="form" id="delete_settings">
+        <ul class="edgetoedge">
+            <li><input type="checkbox" name="messwerte" value="strom" title="Messwerte"></li>                        
+            <li><input type="checkbox" name="einstellungen" value="gas" title="Einstellungen"></li>
+            <li><a href="#" class="redButton submit">Löschen</a></li>                                                 
+        </ul>
         </form>
         
     </div>      
