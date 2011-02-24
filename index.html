@@ -30,10 +30,11 @@
 
         <div class="toolbar">
             <h1>Trackr</h1>
+            <a href="#" class="button slideup">Angebot</a>
         </div>        
         
         <ul class="rounded">
-            <li class="arrow"><a href="#erfassen">Verbrauch erfassen</a></li>
+            <li class="arrow"><a href="#erfassen">Zählerstand erfassen</a></li>
             <li class="arrow"><a href="#history">History ansehen</a></li>
             <li class="arrow"><a href="#settings">Einstellungen</a></li>
             <li class="arrow"><a href="#anleitung">Anleitung</a></li>
@@ -64,12 +65,12 @@
 
         <div class="toolbar">
             <h1>Trackr</h1>
-            <a href="#" class="back">Zurück</a>
-            <a href="#home" class="button flip">Home</a>
+            <a href="#home" class="back">Zurück</a>
         </div>
 
         <ul class="edgetoedge">
-            <li><h3>Anleitung</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></li>                        
+            <li><h3>Anleitung</h3></li>                        
+            <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></li>                        
         </ul>
       
     </div> 
@@ -80,7 +81,7 @@
 
         <div class="toolbar">
             <h1>Einstellungen</h1>
-            <a href="#" class="back">Zurück</a>
+            <a href="#home" class="button back">Zurück</a>
             <a href="#deletesettings" class="button slideup">Löschen</a>
         </div>
 
@@ -88,14 +89,16 @@
         <ul class="edgetoedge">
             <li>Ihre Postleitzahl:</li>
             <li><input type="number" name="plz" placeholder="PLZ" id="plz"></li>
+            <li><p class="location_service">Aktueller Ort / PLZ: <span>ToDo: Lokalisierung</span><a href="">(Diese PLZ verwenden)</a></p></li>
             <li>Produktsparten:</li>
             <li><input type="checkbox" name="strom" value="strom" title="Strom"></li>                        
             <li><input type="checkbox" name="gas" value="gas" title="Gas"></li>
             <li><input type="checkbox" name="wasser" value="wasser" title="Wasser"></li>    
             <li><a href="#" class="greenButton submit">Speichern</a></li>
         </ul>
-
         </form>
+
+        <p class="footer">Trackr, 2010</p>
       
     </div>  
     
@@ -124,13 +127,16 @@
 
         <div class="toolbar">
             <h1>Trackr</h1>
-            <a href="#" class="back">Zurück</a>
-            <a href="#home" class="button flip">Home</a>
+            <a href="#home" class="back">Zurück</a>
         </div>
-
+        
+        <form class="form" id="save_counter">
         <ul class="edgetoedge">
-            <li>Verbrauch erfassen</li>                        
+            <li><h3>Verbrauch erfassen</h3></li>
+            <li><p>Erfassen Sie Ihren aktuellen Zählerstand oder geben Sie ein Datum für eine Erfassung an. Alle Eingaben erfolgen in kWH.</p></li>
+            <li><a href="#" class="greenButton submit">Speichern</a></li>                        
         </ul>
+        </form>
       
     </div>    
     
@@ -140,24 +146,24 @@
 
         <div class="toolbar">
             <h1>Trackr</h1>
-            <a href="#" class="back">Zurück</a>
-            <a href="#home" class="button flip">Home</a>
+            <a href="#home" class="back">Home</a>
         </div>
 
             <ul class="edgetoedge">
                 <li class="sep">Strom</li>
-                <li><a href="#">Flintstone, <em>Fred</em></a></li>
-                <li><a href="#">Flintstone, <em>Pebble</em></a></li>
-                <li><a href="#">Flintstone, <em>Wilma</em></a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
                 <li class="sep">Gas</li>
-                <li><a href="#">Jetson, <em>Elroy</em></a></li>
-                <li><a href="#">Jetson, <em>George</em></a></li>
-                <li><a href="#">Jetson, <em>Jane</em></a></li>
-                <li><a href="#">Jetson, <em>Judy</em></a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
                 <li class="sep">Wasser</li>
-                <li><a href="#">Rubble, <em>Bambam</em></a></li>
-                <li><a href="#">Rubble, <em>Barney</em></a></li>
-                <li><a href="#">Rubble, <em>Betty</em></a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
+                <li><a href="#">02.05.2011, 15:35Uhr</a></li>
             </ul>
       
     </div>

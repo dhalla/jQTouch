@@ -32,7 +32,8 @@ var trackr = {
  
     init: function() {
 
-        trackr.populateFormFields();
+        trackr.populateSettings();
+        trackr.setCounterFields();
         
         $('#settings_form .submit').click(function() {
             trackr.saveSettings();
@@ -41,31 +42,84 @@ var trackr = {
         $('#delete_settings .submit').click(function() {
             trackr.deleteData();
         });
+        
+        $('#save .submit').click(function(){
+            trackr.save();
+        });
     
     },
+    
+    
+    /**
+     * Set Counter-Fields for specific branches
+     * 
+     */
+    setCounterFields: function() {
+        
+        var sparten = localStorage.getItem('sparten').split(',');
+        var cb_field = '<li><input class="counter" type="number" name="###name###" placeholder="###placeholder###"></li>';
+        var $save_form = $('form#save_counter li p');
+        
+        // Remove all Input Fields, if present
+        $('form#save_counter .counter').parent().remove();
+        
+        // Rebuild Input Fields according to Settings
+        for (var i = 0; i < sparten.length; i++){ 
+            field = cb_field.replace("###name###", sparten[i]);
+            field = cb_field.replace("###placeholder###", sparten[i]);
+            $save_form.parent().after(field);            
+        } 
+       
+    },
+    
+    
+    /**
+     * Save Zählerwerte to local Storage
+     *
+     */
+    saveCounterValues: function() {
+        
+        var sparten = localStorage.getItem('sparten');
+        alert("Zählerwerte gespeichert");
+    
+    },
+    
     
     /**
      * Populate Forms with Values from local Storage
      *
      */
-    populateFormFields: function() {
+    populateSettings: function() {
     
         // PLZ
-        if(localStorage.getItem('plz')) {
-            $('#settings_form #plz').val(localStorage.getItem('plz'));
+        var plz = this.hasItem('plz');
+        if(plz) {
+            $('#settings_form #plz').val(plz);
         }
-        
+
         // Sparten
-        if(localStorage.getItem('sparten')) {
-            var sparten = localStorage.getItem('sparten').split(',');
-             $('#settings_form input:checkbox').each(function() {
-                if ($.inArray($(this).attr('name'), sparten) >= 0) {
+        var sparten_cb = $('#settings_form input:checkbox');
+        var sparten = this.hasItem('sparten');
+
+        if(sparten) {
+             // Set checkboxen according to settings
+             sparten_cb.each(function() {
+                $(this).attr('checked', false);
+                if ($.inArray($(this).attr('name'), sparten.split(',')) >= 0) {
                     $(this).attr('checked', true);                   
                 }
             });
-        } 
-                
+        } else {
+            // Init sparten in local Storage if not already set
+            var sparten_set = [];
+            sparten_cb.each(function(index) {
+                sparten_set[index] = $(this).attr('name');
+            });
+            localStorage.setItem('sparten',sparten_set);
+        }; 
+                        
     },
+    
     
     /**
      * Save settings to local Storage
@@ -81,11 +135,14 @@ var trackr = {
         $('#settings_form input:checked').each(function(index) {
             sparten[index] = ($(this).val());
         });
-        localStorage.setItem('sparten',sparten);  
+        
+        localStorage.setItem('sparten',sparten);
+        this.setCounterFields();  
         
         alert("Einstellungen gespeichert.");     
     
     },
+    
     
     /**
      * Delete all Settings, clear local Storage
@@ -103,6 +160,7 @@ var trackr = {
             console.log('PLZ/Sparten gelöscht');
             deleted = true;
         };
+        
         if ($('#delete_settings input[name="messwerte"]').attr('checked')) {
             localStorage.removeItem('messwerte');
             console.log('Messwerte gelöscht');            
@@ -114,6 +172,33 @@ var trackr = {
             jqt.goTo('#settings', 'slidedown');
         }
     
+    },
+    
+    
+    /**
+     * Get List with Counter-Values
+     *
+     */
+    getCounterList: function() {
+    
+    
+    },
+    
+    
+    /**
+     * Check if a key has already set
+     *
+     */
+    hasItem: function(key) {
+    
+        var db = localStorage.getItem(key);
+        if ( db != null) {
+            return db;
+        } else { 
+            return false;
+        }        
+        
     }
+    
 
 }
