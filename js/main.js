@@ -43,9 +43,9 @@ var trackr = {
             trackr.deleteData();
         });
         
-        $('#save .submit').click(function(){
-            trackr.save();
-        });
+        $('#save_counter').bind('submit', function(){
+            trackr.saveCounterValues($(this));
+        });        
     
     },
     
@@ -57,7 +57,6 @@ var trackr = {
     setCounterFields: function() {
         
         var sparten = localStorage.getItem('sparten').split(',');
-        var cb_field = '<li><input class="counter" type="number" name="###name###" placeholder="###placeholder###"></li>';
         var $save_form = $('form#save_counter li p');
         
         // Remove all Input Fields, if present
@@ -65,8 +64,7 @@ var trackr = {
         
         // Rebuild Input Fields according to Settings
         for (var i = 0; i < sparten.length; i++){ 
-            field = cb_field.replace("###name###", sparten[i]);
-            field = cb_field.replace("###placeholder###", sparten[i]);
+            field = '<li><input class="counter" type="number" name="'+ sparten[i] +'" placeholder="'+ sparten[i] +'"></li>';
             $save_form.parent().after(field);            
         } 
        
@@ -77,11 +75,29 @@ var trackr = {
      * Save Zählerwerte to local Storage
      *
      */
-    saveCounterValues: function() {
-        
-        var sparten = localStorage.getItem('sparten');
-        alert("Zählerwerte gespeichert");
+    saveCounterValues: function(form) {
     
+        var consumption = this.hasItem('consumption');
+        consumption =  (consumption) ? JSON.parse(consumption) : { 'wasser': {}, 'gas': {}, 'strom':{} };
+        
+        var vals = form.serializeArray();
+
+        $.each(vals, function(i, val) {
+            console.log();
+            var date = new Date;
+            switch(val.name) {
+                case 'strom': consumption.strom[date.getTime()] = val.value; break;
+                case 'gas': consumption.gas[date.getTime()] = val.value; break;
+                case 'wasser': consumption.wasser[date.getTime()] = val.value; break;
+            } ; 
+  
+
+        });
+        
+        localStorage.setItem('consumption', JSON.stringify(consumption));        
+        console.log(consumption);        
+        return false;
+           
     },
     
     
@@ -169,7 +185,8 @@ var trackr = {
         
         if (deleted == true) {
             alert("Lokale Daten gelöscht.");
-            jqt.goTo('#settings', 'slidedown');
+            //jqt.goTo('#settings', 'slidedown');
+            jqt.goBack('#settings', 'slidedown');
         }
     
     },
@@ -202,3 +219,5 @@ var trackr = {
     
 
 }
+
+
