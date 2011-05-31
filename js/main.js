@@ -34,6 +34,7 @@ var trackr = {
 
         trackr.populateSettings();
         trackr.setCounterFields();
+        trackr.setHomepageConsumption();
         
         $('#settings_form .submit').click(function() {
             trackr.saveSettings();
@@ -49,6 +50,18 @@ var trackr = {
     
     },
     
+    
+    /**
+     * Populate Homepage with last-saved Values
+     *
+     */
+    setHomepageConsumption: function() {
+        
+        var consumption = localStorage.getItem('consumption');
+        consumption = JSON.parse(consumption);
+        console.log(consumption);
+    
+    },
     
     /**
      * Set Counter-Fields for specific branches
